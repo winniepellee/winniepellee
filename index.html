@@ -201,44 +201,36 @@
   }
   .project-item:hover { border-color: var(--slate); transform: translateY(-2px); }
 
-  /* 影片容器：固定 16:9 比例 */
+  /* 左側媒體區塊：固定 16:9 比例 */
   .project-preview {
     width: 100%;
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid var(--border);
-    background: #000;
+    background: #eaeef1;
   }
-  /* YouTube iframe 填滿容器 */
-  .project-preview iframe {
+  .project-preview iframe,
+  .project-preview img {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     border: none;
     border-radius: 3px;
-  }
-  /* 靜態截圖用法（非影片） */
-  .project-preview img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
     object-fit: cover;
-    border-radius: 3px;
   }
-  /* 佔位符（尚未放內容時顯示） */
   .project-preview-placeholder {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center; gap: 8px;
     color: var(--muted); font-size: 13px;
-    background: #eaeef1;
   }
   .project-preview-icon { font-size: 28px; margin-bottom: 4px; }
 
+  /* 右側文字區塊 */
   .project-info { display: flex; flex-direction: column; }
   .project-meta {
     display: flex; justify-content: space-between;
@@ -263,10 +255,7 @@
     color: var(--text);
     margin-top: 14px; margin-bottom: 4px;
   }
-  .project-desc ul {
-    padding-left: 16px; margin: 0;
-    list-style: disc;
-  }
+  .project-desc ul { padding-left: 16px; margin: 0; list-style: disc; }
   .project-desc ul li { margin-bottom: 4px; }
 
   /* SKILLS */
@@ -497,23 +486,12 @@
 <div class="divider"></div>
 
 <!-- PROJECTS -->
-<!--
-  ★ 如何放入影片：
-    把 <div class="project-preview-placeholder">...</div>
-    換成：
-    <iframe src="https://www.youtube.com/embed/你的影片ID" allowfullscreen></iframe>
-
-  ★ 如何放入截圖（靜態圖片）：
-    把 <div class="project-preview-placeholder">...</div>
-    換成：
-    <img src="你的圖片檔名.png" alt="描述">
--->
 <section id="projects">
   <div class="section-label">Projects</div>
   <h2 class="section-title">專案作品</h2>
   <div class="projects-list">
 
-    <!-- 專案 1：資料批次轉換工具 -->
+    <!-- 專案 1：資料批次轉換工具（YouTube 影片）-->
     <div class="project-item">
       <div class="project-preview">
         <iframe src="https://www.youtube.com/embed/vPgx0FuxZh8" allowfullscreen></iframe>
@@ -531,13 +509,13 @@
     <!-- 專案 2：各縣市政府專案執行 -->
     <div class="project-item">
       <div class="project-preview">
-        <!-- 上傳圖片後改為：<img src="project2.jpg" alt="各縣市政府專案執行"> -->
-        <div class="project-preview-placeholder">
-          <div class="project-preview-icon">🖼️</div>
-          <span>上傳圖片：project2.jpg</span>
-        </div>
+        <img src="project2.jpg" alt="各縣市政府專案執行">
       </div>
-     <img src="project2.jpg" alt="各縣市政府專案執行">
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-tag">專案管理</span>
+          <span class="project-date">2022/9 — 2024/3</span>
+        </div>
         <h3>各縣市政府專案執行</h3>
         <div class="project-desc">
           <strong>政策推動與政府補助案管理</strong>
@@ -561,7 +539,8 @@
 
     <!-- 專案 3：和泰汽車官網展示 -->
     <div class="project-item">
-      <img src="project3.jpg" alt="和泰汽車官網展示">
+      <div class="project-preview">
+        <img src="project3.jpg" alt="和泰汽車官網展示">
       </div>
       <div class="project-info">
         <div class="project-meta">
@@ -592,7 +571,6 @@
     <!-- 專案 4：教育部青年發展署百工一日一超牆職人 -->
     <div class="project-item">
       <div class="project-preview">
-        <!-- 上傳圖片後改為：<img src="project4.jpg" alt="超牆職人專案"> -->
         <img src="project4.jpg" alt="超牆職人專案">
       </div>
       <div class="project-info">
@@ -623,8 +601,7 @@
     <!-- 專案 5：汽車協會網站維運 -->
     <div class="project-item">
       <div class="project-preview">
-        <!-- 上傳圖片後改為：<img src="project5.jpg" alt="汽車協會網站維運"> -->
-       <img src="project5.jpg" alt="汽車協會網站維運">
+        <img src="project5.jpg" alt="汽車協會網站維運">
       </div>
       <div class="project-info">
         <div class="project-meta">
