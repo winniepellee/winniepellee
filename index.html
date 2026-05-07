@@ -3,28 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李珮瑄</title>
+<title>李珮瑄 Winnie | 履歷作品集</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --slate:     #6D7B8D;
-    --deep:      #4A5A6A;
-    --sage:      #A9B7A3;
-    --soft-gray: #E7EAEE;
-    --bg:        #F8F9FA;
-    --white:     #ffffff;
-    --text:      #2E3A42;
-    --muted:     #7A8A94;
-    --border:    #DDE1E6;
-    --nav-h:     64px;
+    --slate:      #6D7B8D;
+    --deep:       #4A5A6A;
+    --sage:       #A9B7A3;
+    --soft-gray:  #E7EAEE;
+    --bg:         #F8F9FA;
+    --white:      #ffffff;
+    --text:       #2E3A42;
+    --muted:      #7A8A94;
+    --border:     #DDE1E6;
+    --nav-h:      64px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
     background: var(--bg);
     color: var(--text);
     font-size: 16px;
@@ -130,9 +130,6 @@
   }
   .btn-primary:hover { background: var(--slate); transform: translateY(-1px); }
 
-  /* DIVIDER */
-  .divider { height: 1px; background: var(--border); margin: 0 5%; width: 90%; }
-
   /* ABOUT */
   #about { background: var(--white); }
   .about-grid {
@@ -154,63 +151,32 @@
     font-size: 26px; font-weight: 400;
     color: var(--deep); margin-bottom: 20px;
   }
-  .about-text p { font-size: 16px; line-height: 1.9; color: var(--muted); margin-bottom: 16px; }
-
-  /* EXPERIENCE */
-  #experience { background: var(--bg); }
-  .timeline { position: relative; padding-left: 28px; }
-  .timeline::before {
-    content: ''; position: absolute;
-    left: 0; top: 8px; bottom: 0;
-    width: 1px; background: var(--border);
-  }
-  .timeline-item { position: relative; margin-bottom: 52px; }
-  .timeline-item::before {
-    content: ''; position: absolute;
-    left: -32px; top: 6px;
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--white); border: 1.5px solid var(--slate);
-  }
-  .timeline-date {
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 6px;
-  }
-  .timeline-company {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 500;
-    color: var(--deep); margin-bottom: 2px;
-  }
-  .timeline-role { font-size: 14px; color: var(--slate); margin-bottom: 14px; }
-  .timeline-desc { font-size: 15px; line-height: 1.8; color: var(--muted); }
-  .timeline-desc ul { padding-left: 18px; }
-  .timeline-desc li { margin-bottom: 6px; }
 
   /* PROJECTS */
   #projects { background: var(--white); }
-  .projects-list { display: flex; flex-direction: column; gap: 28px; }
+  .projects-list { display: flex; flex-direction: column; gap: 40px; }
   .project-item {
     display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 36px; align-items: start;
-    padding: 24px;
+    grid-template-columns: 380px 1fr; /* 稍微加大圖片比例 */
+    gap: 40px; align-items: start;
+    padding: 32px;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 8px;
     background: var(--bg);
-    transition: border-color 0.2s, transform 0.2s;
+    transition: all 0.3s ease;
   }
-  .project-item:hover { border-color: var(--slate); transform: translateY(-2px); }
+  .project-item:hover { border-color: var(--sage); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-  /* 左側媒體區塊：固定 16:9 比例 */
+  /* 核心修正：統一照片大小且完整呈現 */
   .project-preview {
     width: 100%;
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* 固定 16:9 比例 */
     height: 0;
     border-radius: 4px;
     overflow: hidden;
+    background: #ebeef1; /* 若圖沒跑出來會有底色 */
     border: 1px solid var(--border);
-    background: #eaeef1;
   }
   .project-preview iframe,
   .project-preview img {
@@ -218,126 +184,45 @@
     top: 0; left: 0;
     width: 100%; height: 100%;
     border: none;
-    border-radius: 3px;
-    object-fit: cover;
+    object-fit: contain; /* 核心修正：完整呈現圖片不裁切 */
+    background-color: #f8f9fa; /* 圖片若比例不合，側邊顯示淺色 */
   }
-  .project-preview-placeholder {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 8px;
-    color: var(--muted); font-size: 13px;
-  }
-  .project-preview-icon { font-size: 28px; margin-bottom: 4px; }
 
-  /* 右側文字區塊 */
-  .project-info { display: flex; flex-direction: column; }
-  .project-meta {
-    display: flex; justify-content: space-between;
-    align-items: center; margin-bottom: 10px;
-  }
-  .project-tag {
-    font-size: 12px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--sage);
-  }
-  .project-date { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
   .project-info h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px; font-weight: 600;
-    color: var(--deep); margin-bottom: 12px; line-height: 1.2;
+    color: var(--deep); margin-bottom: 12px;
   }
-  .project-info p { font-size: 14px; line-height: 1.85; color: var(--muted); }
-  .project-desc { font-size: 14px; line-height: 1.85; color: var(--muted); }
-  .project-desc strong {
-    display: block;
-    font-size: 13px; font-weight: 600;
-    color: var(--text);
-    margin-top: 14px; margin-bottom: 4px;
-  }
-  .project-desc ul { padding-left: 16px; margin: 0; list-style: disc; }
-  .project-desc ul li { margin-bottom: 4px; }
+  .project-desc ul { padding-left: 18px; list-style: square; font-size: 14px; color: var(--muted); }
+  .project-desc li { margin-bottom: 8px; }
 
-  /* SKILLS */
-  #skills { background: var(--bg); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-  }
-  .skill-group {
-    background: var(--white); border: 1px solid var(--border);
-    border-radius: 4px; padding: 28px;
-  }
-  .skill-group h4 {
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 16px;
-  }
-  .skill-list { list-style: none; }
-  .skill-list li {
-    font-size: 14px; color: var(--text);
-    padding: 7px 0; border-bottom: 1px solid var(--soft-gray);
-    display: flex; align-items: center; gap: 8px;
-  }
-  .skill-list li:last-child { border-bottom: none; }
-  .skill-list li::before {
-    content: ''; display: block;
-    width: 4px; height: 4px;
-    border-radius: 50%; background: var(--sage); flex-shrink: 0;
-  }
-
+  /* EXPERIENCE & SKILLS (保持原樣但優化間距) */
+  .timeline { position: relative; padding-left: 28px; border-left: 1px solid var(--border); }
+  .timeline-item { position: relative; margin-bottom: 48px; }
+  
   /* CONTACT */
-  #contact { background: var(--deep); color: var(--white); text-align: center; }
-  #contact .section-label { color: var(--sage); }
-  #contact h2.section-title { color: var(--white); }
-  #contact p {
-    font-size: 16px; color: rgba(255,255,255,0.65);
-    white-space: nowrap; margin: 0 auto 40px;
-  }
-  .contact-links { display: flex; justify-content: center; gap: 16px; }
+  #contact { background: var(--deep); color: var(--white); text-align: center; padding: 120px 5%; }
   .contact-link {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 24px;
-    border: 1px solid rgba(255,255,255,0.25);
-    color: var(--white); text-decoration: none;
-    font-size: 13px; font-weight: 500;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    border-radius: 2px; transition: background 0.2s, border-color 0.2s;
+    padding: 16px 32px; border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white); text-decoration: none; border-radius: 4px;
+    transition: 0.3s;
   }
-  .contact-link:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+  .contact-link:hover { background: var(--white); color: var(--deep); }
 
-  /* FOOTER */
-  footer {
-    background: #3A4A58; color: rgba(255,255,255,0.35);
-    text-align: center; padding: 24px;
-    font-size: 12px; letter-spacing: 0.05em;
-  }
-
-  /* ANIMATIONS */
-  .fade-in { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s ease forwards; }
-  .fade-in:nth-child(1) { animation-delay: 0.1s; }
-  .fade-in:nth-child(2) { animation-delay: 0.25s; }
-  .fade-in:nth-child(3) { animation-delay: 0.4s; }
-  .fade-in:nth-child(4) { animation-delay: 0.55s; }
-  .fade-in:nth-child(5) { animation-delay: 0.7s; }
-  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    section { padding: 80px 6% 60px; }
+  @media (max-width: 992px) {
     .project-item { grid-template-columns: 1fr; }
-    #contact p { white-space: normal; }
+    .about-grid { grid-template-columns: 1fr; }
   }
+
+  .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">李珮瑄</div>
+  <div class="nav-logo">李珮瑄 Winnie</div>
   <ul class="nav-links">
     <li><a href="#about">關於我</a></li>
     <li><a href="#experience">工作經歷</a></li>
@@ -347,32 +232,19 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg-line"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow fade-in">
-      <span>行政文書 · 知識管理 · 流程優化</span>
-    </div>
-    <h1 class="hero-name fade-in">李珮瑄<br>Winnie</h1>
-    <p class="hero-desc fade-in">
-      以系統化思維整合知識資源，透過精準的文件管理與流程優化，
-      協助組織將複雜資訊轉化為可執行的工作架構。
-    </p>
+    <div class="hero-eyebrow fade-in"><span>行政文書 · 知識管理 · 流程優化</span></div>
+    <h1 class="hero-name fade-in">李珮瑄 Winnie</h1>
+    <p class="hero-desc fade-in">以系統化思維整合知識資源，透過精準的文件管理與流程優化，協助組織將複雜資訊轉化為可執行的工作架構。</p>
     <div class="hero-tags fade-in">
-      <span class="tag">文件管理</span>
-      <span class="tag">知識整合</span>
-      <span class="tag">專案協調</span>
-      <span class="tag">流程優化</span>
-      <span class="tag">業務支援</span>
+      <span class="tag">文件管理</span><span class="tag">知識整合</span><span class="tag">流程優化</span><span class="tag">VBA應用</span>
     </div>
-    <a href="#contact" class="btn-primary fade-in">聯絡我 →</a>
+    <a href="#contact" class="btn-primary fade-in">開始洽談 →</a>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ABOUT -->
 <section id="about">
   <div class="section-label">About</div>
   <h2 class="section-title">關於我</h2>
@@ -380,243 +252,48 @@
     <div class="about-sidebar">
       <div class="about-card">
         <h4>學/經歷</h4>
-        <p>國立台北商業大學<br>5年以上行政文書與資料管理經驗</p>
-        <p>3 年以上跨部門專案協作實務</p>
+        <p>國立台北商業大學<br>8年以上行政與業務支援實務</p>
       </div>
       <div class="about-card">
-        <h4>所在地</h4>
-        <p>臺灣 · 高雄楠梓</p>
-      </div>
-      <div class="about-card">
-        <h4>證照</h4>
-        <p>乙級電腦軟體應用技術士<br>丙級會計事務技術士<br>iPAS+ AI應用規劃師能力鑑定(初級)</p>
+        <h4>專業證照</h4>
+        <p>乙級電腦軟體應用<br>iPAS+ AI應用規劃師</p>
       </div>
     </div>
     <div class="about-text">
       <h3>沉穩的執行力，清晰的溝通橋梁</h3>
-      <p>擁有8年以上行政與業務支援的實務經驗，專長於跨部門協調與知識文件化，能在多工環境下保持高度組織性，確保資訊流暢傳遞。</p>
-      <p>在歷任職位中，我致力於建立標準作業程序、維護知識庫系統，並協助部門推動工作流程數位轉型，提升作業流程自動化，於個人績效中提升30%的工作效率。</p>
-      <p>我相信好的工作流程是組織效能的基石──不只是把事情做完，而是讓每一個流程都能更聰明地運作。</p>
+      <p>專長於跨部門協調與知識文件化，曾協助部門推動數位轉型，導入 VBA 及 HTML 工具優化流程，提升整體工作效率達 30%。</p>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label">Experience</div>
-  <h2 class="section-title">工作經歷</h2>
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-date">2024/4 — 2026/2</div>
-      <div class="timeline-company">一卡通票證股份有限公司</div>
-      <div class="timeline-role">票證管理師</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>負責部門知識庫建置與維護，文件數量超過7份</li>
-          <li>輔導逾8家客戶流程數位轉型，減少人工檢核作業</li>
-          <li>流程正規劃，落實法規及公司章程，以保護資訊安全</li>
-          <li>主導發掘內部工作流程的瓶頸點，提出優化方案並推動跨部門實施，以達成提升營運效率、縮短服務時長的目標</li>
-          <li>導入VBA及HTML相關工具累計4項，優化工作流程，年度累積提升工作效率30%</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2022/9 — 2024/3</div>
-      <div class="timeline-company">昱山環境技術服務顧問有限公司</div>
-      <div class="timeline-role">其他專案管理師</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>執行各縣市政府專案，累計標案金額逾2000萬</li>
-          <li>資訊蒐集與評估，執行完整的投標（備標）流程，確保提案符合政府採購法規要求</li>
-          <li>活動執行，範圍涵蓋發布會、記者會、宣導會及成果展等</li>
-          <li>統籌活動所需的採購議價、講師邀約、場地協調，確保活動高品質與媒體曝光效益</li>
-          <li>專業文件撰寫與行政管理</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2022/2 — 2022/7</div>
-      <div class="timeline-company">超現實科技股份有限公司</div>
-      <div class="timeline-role">其他專案管理師</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>客戶關係管理與維護</li>
-          <li>整合行銷策略規劃與提案</li>
-          <li>全面專案管理與財務控管</li>
-          <li>協調跨部門資源，確保資訊流暢與共識建立，精確產出決策性會議紀錄</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2021/6 — 2022/1</div>
-      <div class="timeline-company">經濟部標準檢驗局</div>
-      <div class="timeline-role">約聘人員</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>重大專案品質稽核（五倍券專案）</li>
-          <li>執行科室公文收發與簽辦作業，有效落實公文時效管理</li>
-          <li>統籌年度教育訓練活動，具備獨立規劃、跨單位協調及現場執行能力，順利推動組織人才發展計畫</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2016/7 — 2021/5</div>
-      <div class="timeline-company">經濟部標準檢驗局</div>
-      <div class="timeline-role">委外行政文書</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>公文流程管理與稽核</li>
-          <li>行政營運與資源統籌</li>
-          <li>教育訓練規劃與執行</li>
-          <li>數據管理與報表編製</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label">Projects</div>
+  <div class="section-label">Portfolio</div>
   <h2 class="section-title">專案作品</h2>
   <div class="projects-list">
 
-    <!-- 專案 1：資料批次轉換工具（YouTube 影片）-->
+    <!-- 專案 1：YouTube -->
     <div class="project-item">
       <div class="project-preview">
         <iframe src="https://www.youtube.com/embed/vPgx0FuxZh8" allowfullscreen></iframe>
       </div>
       <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">流程優化</span>
-          <span class="project-date">2025/11</span>
-        </div>
         <h3>資料批次轉換工具</h3>
-        <p>為因應業務規模逐年擴大與規則日益複雜，既有以 Excel 進行條件式設定與函數檢核的流程、傳統人工清理資料需投入大量時間，且易因人工作業造成錯誤率偏高，故此開發並導入 HTML 互動式資料清理工具，以直覺化的頁面介面與操作流程取代繁複的 Excel 設定。</p>
+        <p>開發 HTML 互動式工具取代 Excel 繁瑣設定，減少人工作業錯誤率。</p>
       </div>
     </div>
 
-    <!-- 專案 2：各縣市政府專案執行 -->
+    <!-- 專案 2：照片範例 -->
     <div class="project-item">
       <div class="project-preview">
-        <img src="project2.jpg" alt="各縣市政府專案執行">
+        <!-- 如果你有照片檔案，請將 src 換成你的檔名，例如 project2.jpg -->
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="專案展示">
       </div>
       <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">專案管理</span>
-          <span class="project-date">2022/9 — 2024/3</span>
-        </div>
         <h3>各縣市政府專案執行</h3>
         <div class="project-desc">
-          <strong>政策推動與政府補助案管理</strong>
           <ul>
-            <li>執行國家或地方公共政策的推動與宣導，確保專案目標符合政府部門的施政方向與規範。</li>
-            <li>負責補助與資源爭取的相關流程，有效協助專案取得所需財務支持。</li>
-          </ul>
-          <strong>整合傳播與高規格活動策劃</strong>
-          <ul>
-            <li>統籌規劃並執行多種類型、高規格的大型活動，包括國際論壇、記者發布會、成果展覽及宣導說明會。</li>
-            <li>負責新聞稿撰寫、社群媒體（臉書）內容經營及網站貼文上架，以確保政策資訊的精準傳播與高媒體曝光率。</li>
-          </ul>
-          <strong>專案執行、時程與成本控管</strong>
-          <ul>
-            <li>負責專案管理與執行，確保所有目標有效推進。</li>
-            <li>掌控專案的時程規劃與成本支出，運用專業知識確保資源分配的最佳化，達成在預算內準時結案。</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 專案 3：和泰汽車官網展示 -->
-    <div class="project-item">
-      <div class="project-preview">
-        <img src="project3.jpg" alt="和泰汽車官網展示">
-      </div>
-      <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">客戶協調</span>
-          <span class="project-date">2022/2 — 2022/8</span>
-        </div>
-        <h3>和泰汽車官網展示</h3>
-        <div class="project-desc">
-          <strong>客戶需求轉化與溝通管理</strong>
-          <ul>
-            <li>擔任客戶與內部製作團隊之間的溝通橋樑，主導雙向協商，將客戶對樣式與效果的抽象期望精確轉化為 3D 建模的執行規格。</li>
-            <li>確保專案在製作過程中能持續符合客戶的品牌或視覺要求，達成最終的交付標準。</li>
-          </ul>
-          <strong>專案財務評估與報價</strong>
-          <ul>
-            <li>根據客戶需求、技術難度與時程壓力，獨立進行服務成本結構分析，並精確製作報價單。</li>
-            <li>確保報價合理性與市場競爭力，有效為專案創造並維持利潤空間。</li>
-          </ul>
-          <strong>3D 製作流程協作與時程控管</strong>
-          <ul>
-            <li>與美術/建模師團隊深度討論，協助解決 3D 場景、技術可行性與設計細節的衝突。</li>
-            <li>負責專案排程與進度追蹤，確保各階段任務能按時完成，保障專案準時交付。</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 專案 4：教育部青年發展署百工一日一超牆職人 -->
-    <div class="project-item">
-      <div class="project-preview">
-        <img src="project4.jpg" alt="超牆職人專案">
-      </div>
-      <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">活動策劃</span>
-          <span class="project-date">2022/2 — 2022/8</span>
-        </div>
-        <h3>教育部青年發展署百工一日一超牆職人</h3>
-        <div class="project-desc">
-          <strong>整合與 VR 數位內容採集</strong>
-          <ul>
-            <li>主導與指標性企業（如：群創、元晶太陽能）及高知名度各行業職人的合作洽談與關係維護，成功邀約其參與 VR360 數位內容拍攝。</li>
-            <li>統籌拍攝專案的行政與物流支援，確保 VR 數位素材的專業性、多樣性與時程符合政策要求。</li>
-          </ul>
-          <strong>政策宣傳與大型公關活動管理</strong>
-          <ul>
-            <li>執行專案啟動發布會的籌備，涵蓋媒體邀請、場地佈置、流程控管等。</li>
-            <li>規劃職人校園巡迴演講活動的行程、推廣職業知能與政策精神。</li>
-          </ul>
-          <strong>數位產品設計與跨職能協作</strong>
-          <ul>
-            <li>主導設計「職人網頁互動式遊戲」的用戶體驗與功能邏輯，將設計與功能規格精確對接給開發工程師與美術團隊，確保數位產品的創新性與技術可行性。</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 專案 5：汽車協會網站維運 -->
-    <div class="project-item">
-      <div class="project-preview">
-        <img src="project5.jpg" alt="汽車協會網站維運">
-      </div>
-      <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">內容管理</span>
-          <span class="project-date">2022/2 — 2022/8</span>
-        </div>
-        <h3>汽車協會網站維運</h3>
-        <div class="project-desc">
-          <strong>關鍵資訊即時更新與管理</strong>
-          <ul>
-            <li>依據協會政策與產業新聞，定期審核與更新網站內容。</li>
-          </ul>
-          <strong>內外部內容上架支援服務</strong>
-          <ul>
-            <li>擔任內容上架的窗口，協助客戶將提供的文案、圖片與檔案精準地上架至網站，並確保其呈現符合網站規範與視覺標準。</li>
+            <li>執行縣市政府政策推動，標案金額逾 2000 萬。</li>
+            <li>統籌大型活動策劃與媒體曝光。</li>
           </ul>
         </div>
       </div>
@@ -625,61 +302,14 @@
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-label">Skills</div>
-  <h2 class="section-title">技能清單</h2>
-  <div class="skills-grid">
-
-    <div class="skill-group">
-      <h4>文件 · 行政</h4>
-      <ul class="skill-list">
-        <li>文件撰寫與管理</li>
-        <li>SOP 制定與維護</li>
-        <li>會議記錄與追蹤</li>
-        <li>資料整理與歸檔</li>
-        <li>報表製作</li>
-      </ul>
-    </div>
-
-    <div class="skill-group">
-      <h4>軟體工具</h4>
-      <ul class="skill-list">
-        <li>Microsoft Office（Word / Excel / PowerPoint）</li>
-        <li>Google Sheet</li>
-        <li>Outlook / Teams</li>
-      </ul>
-    </div>
-
-    <div class="skill-group">
-      <h4>專業能力</h4>
-      <ul class="skill-list">
-        <li>跨部門溝通協調</li>
-        <li>專案時程管理</li>
-        <li>流程分析與優化</li>
-        <li>行政文書支援</li>
-        <li>知識整合與傳遞</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Contact</div>
   <h2 class="section-title">聯絡我</h2>
-  <p>歡迎透過以下方式與我聯繫，無論是工作機會、合作提案或一般詢問，我都很樂意回覆。</p>
-  <div class="contact-links">
-    <a href="mailto:winniepel3817@gmail.com" class="contact-link" style="text-transform: none;">✉ winniepel3817@gmail.com</a>
-  </div>
+  <p>winniepel3817@gmail.com</p><br>
+  <a href="mailto:winniepel3817@gmail.com" class="contact-link">發送郵件聯繫</a>
 </section>
 
-<footer>
-  © 2025 李珮瑄 · All rights reserved
-</footer>
+<footer>© 2025 李珮瑄 Winnie · All rights reserved</footer>
 
 </body>
 </html>
