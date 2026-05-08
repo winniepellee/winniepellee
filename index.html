@@ -6,7 +6,6 @@
 <title>李珮瑄</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --slate:     #6D7B8D;
@@ -20,124 +19,36 @@
     --border:    #DDE1E6;
     --nav-h:     64px;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.7;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; }
 
   /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    height: var(--nav-h);
-    background: rgba(248,249,250,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%;
-    z-index: 100;
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px; font-weight: 600;
-    color: var(--deep); letter-spacing: 0.02em;
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(248,249,250,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; z-index: 100; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--deep); letter-spacing: 0.02em; }
   .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a {
-    font-size: 13px; font-weight: 500;
-    color: var(--muted); text-decoration: none;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--deep); }
-
-  /* NAV ACTIVE */
   .nav-links a.active { color: var(--deep); }
-  .nav-links a.active::after {
-    content: ''; display: block;
-    width: 100%; height: 2px;
-    background: var(--sage);
-    margin-top: 2px;
-    border-radius: 1px;
-  }
+  .nav-links a.active::after { content: ''; display: block; width: 100%; height: 2px; background: var(--sage); margin-top: 2px; border-radius: 1px; }
 
-  /* SECTIONS - 縮短間距 */
+  /* SECTIONS */
   section { padding: 72px 5% 60px; }
-  .section-label {
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 12px;
-  }
-  h2.section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 400; color: var(--deep);
-    margin-bottom: 48px; line-height: 1.2;
-  }
+  .section-label { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; }
+  h2.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 400; color: var(--deep); margin-bottom: 48px; line-height: 1.2; }
 
   /* HERO */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding-top: calc(var(--nav-h) + 40px);
-    position: relative; overflow: hidden;
-  }
-  .hero-bg-line {
-    position: absolute; top: 0; right: 8%;
-    width: 1px; height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--border) 30%, var(--border) 70%, transparent);
-    opacity: 0.6;
-  }
+  #hero { min-height: 100vh; display: flex; align-items: center; padding-top: calc(var(--nav-h) + 40px); position: relative; overflow: hidden; }
+  .hero-bg-line { position: absolute; top: 0; right: 8%; width: 1px; height: 100%; background: linear-gradient(to bottom, transparent, var(--border) 30%, var(--border) 70%, transparent); opacity: 0.6; }
   .hero-content { max-width: 720px; }
-  .hero-eyebrow {
-    display: flex; align-items: center; gap: 12px;
-    margin-bottom: 28px;
-  }
-  .hero-eyebrow::before {
-    content: ''; display: block;
-    width: 36px; height: 1px; background: var(--sage);
-  }
-  .hero-eyebrow span {
-    font-size: 14px; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--sage);
-  }
-  h1.hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 7vw, 88px);
-    font-weight: 300; line-height: 1.05;
-    color: var(--deep); margin-bottom: 32px;
-  }
-  .hero-desc {
-    font-size: 17px; line-height: 1.8;
-    color: var(--text); max-width: 560px;
-    margin-bottom: 48px;
-    border-left: 2px solid var(--sage);
-    padding-left: 20px;
-  }
+  .hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 36px; height: 1px; background: var(--sage); }
+  .hero-eyebrow span { font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); }
+  h1.hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 7vw, 88px); font-weight: 300; line-height: 1.05; color: var(--deep); margin-bottom: 32px; }
+  .hero-desc { font-size: 17px; line-height: 1.8; color: var(--text); max-width: 560px; margin-bottom: 48px; border-left: 2px solid var(--sage); padding-left: 20px; }
   .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; }
-  .tag {
-    font-size: 12px; font-weight: 500;
-    padding: 6px 14px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--slate);
-    background: var(--white);
-    letter-spacing: 0.04em;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 28px;
-    background: var(--deep); color: var(--white);
-    text-decoration: none; font-size: 13px; font-weight: 500;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    border-radius: 2px; transition: background 0.2s, transform 0.15s;
-  }
+  .tag { font-size: 12px; font-weight: 500; padding: 6px 14px; border: 1px solid var(--border); border-radius: 2px; color: var(--slate); background: var(--white); letter-spacing: 0.04em; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--deep); color: var(--white); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s, transform 0.15s; }
   .btn-primary:hover { background: var(--slate); transform: translateY(-1px); }
 
   /* DIVIDER */
@@ -145,52 +56,41 @@
 
   /* ABOUT */
   #about { background: var(--white); }
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1.4fr;
-    gap: 80px; align-items: start;
-  }
-  .about-card {
-    background: var(--bg); border: 1px solid var(--border);
-    border-radius: 4px; padding: 28px; margin-bottom: 16px;
-  }
-  .about-card h4 {
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 12px;
-  }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+  .about-card { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 28px; margin-bottom: 16px; }
+  .about-card h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; }
   .about-card p { font-size: 15px; color: var(--text); }
-  .about-text h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px; font-weight: 400;
-    color: var(--deep); margin-bottom: 20px;
-  }
+  .about-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--deep); margin-bottom: 20px; }
   .about-text p { font-size: 16px; line-height: 1.9; color: var(--muted); margin-bottom: 16px; }
+
+  /* 實戰經歷 Banner */
+  .exp-banner {
+    width: 100%; background: var(--sage);
+    border-radius: 4px; padding: 18px 24px;
+    margin: 20px 0 24px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .exp-banner span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 500;
+    color: var(--white); letter-spacing: 0.08em;
+  }
+
+  /* STAT COUNTERS */
+  .about-stats { display: flex; gap: 16px; flex-wrap: wrap; }
+  .stat-box { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 16px 18px; min-width: 100px; text-align: center; flex: 1; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--deep); line-height: 1; }
+  .stat-unit { font-size: 13px; color: var(--sage); font-weight: 700; margin-left: 1px; }
+  .stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; margin-top: 4px; }
 
   /* EXPERIENCE */
   #experience { background: var(--bg); }
   .timeline { position: relative; padding-left: 28px; }
-  .timeline::before {
-    content: ''; position: absolute;
-    left: 0; top: 8px; bottom: 0;
-    width: 1px; background: var(--border);
-  }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: var(--border); }
   .timeline-item { position: relative; margin-bottom: 52px; }
-  .timeline-item::before {
-    content: ''; position: absolute;
-    left: -32px; top: 6px;
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--white); border: 1.5px solid var(--slate);
-  }
-  .timeline-date {
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 6px;
-  }
-  .timeline-company {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 500;
-    color: var(--deep); margin-bottom: 2px;
-  }
+  .timeline-item::before { content: ''; position: absolute; left: -32px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--white); border: 1.5px solid var(--slate); }
+  .timeline-date { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 6px; }
+  .timeline-company { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--deep); margin-bottom: 2px; }
   .timeline-role { font-size: 14px; color: var(--slate); margin-bottom: 14px; }
   .timeline-desc { font-size: 15px; line-height: 1.8; color: var(--muted); }
   .timeline-desc ul { padding-left: 18px; }
@@ -199,204 +99,66 @@
   /* PROJECTS */
   #projects { background: var(--white); }
   .projects-list { display: flex; flex-direction: column; gap: 28px; }
-  .project-item {
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 36px; align-items: start;
-    padding: 24px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    background: var(--bg);
-    transition: border-color 0.2s, transform 0.2s;
-  }
+  .project-item { display: grid; grid-template-columns: 340px 1fr; gap: 36px; align-items: start; padding: 24px; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); transition: border-color 0.2s, transform 0.2s; }
   .project-item:hover { border-color: var(--slate); transform: translateY(-2px); }
-
-  /* 左側媒體區塊：固定 16:9 比例 */
-  .project-preview {
-    width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: #eaeef1;
-  }
-  .project-preview iframe,
-  .project-preview img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
-    border-radius: 3px;
-    object-fit: cover;
-  }
-  .project-preview-placeholder {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 8px;
-    color: var(--muted); font-size: 13px;
-  }
-  .project-preview-icon { font-size: 28px; margin-bottom: 4px; }
-
-  /* 右側文字區塊 */
+  .project-preview { width: 100%; position: relative; padding-bottom: 56.25%; height: 0; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); background: #eaeef1; }
+  .project-preview iframe, .project-preview img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 3px; object-fit: cover; }
   .project-info { display: flex; flex-direction: column; }
-  .project-meta {
-    display: flex; justify-content: space-between;
-    align-items: center; margin-bottom: 10px;
-  }
-  .project-tag {
-    font-size: 12px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--sage);
-  }
+  .project-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .project-tag { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); }
   .project-date { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
-  .project-info h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px; font-weight: 600;
-    color: var(--deep); margin-bottom: 12px; line-height: 1.2;
-  }
+  .project-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--deep); margin-bottom: 12px; line-height: 1.2; }
   .project-info p { font-size: 14px; line-height: 1.85; color: var(--muted); }
   .project-desc { font-size: 14px; line-height: 1.85; color: var(--muted); }
-  .project-desc strong {
-    display: block;
-    font-size: 13px; font-weight: 600;
-    color: var(--text);
-    margin-top: 14px; margin-bottom: 4px;
-  }
+  .project-desc strong { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-top: 14px; margin-bottom: 4px; }
   .project-desc ul { padding-left: 16px; margin: 0; list-style: disc; }
   .project-desc ul li { margin-bottom: 4px; }
 
   /* TOOLS */
   #tools { background: var(--bg); }
   .tools-grid { display: flex; flex-direction: column; gap: 24px; }
-  .tool-card {
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    background: var(--white);
-    overflow: hidden;
-    transition: border-color 0.2s, transform 0.2s;
-  }
+  .tool-card { border: 1px solid var(--border); border-radius: 4px; background: var(--white); overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
   .tool-card:hover { border-color: var(--slate); transform: translateY(-2px); }
-  .tool-header {
-    padding: 24px 28px 16px;
-    display: flex; justify-content: space-between; align-items: flex-start;
-  }
+  .tool-header { padding: 24px 28px 16px; display: flex; justify-content: space-between; align-items: flex-start; }
   .tool-header-left { display: flex; flex-direction: column; gap: 6px; }
-  .tool-type {
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--sage);
-  }
-  .tool-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 600;
-    color: var(--deep); line-height: 1.2;
-  }
+  .tool-type { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); }
+  .tool-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--deep); line-height: 1.2; }
   .tool-date { font-size: 12px; color: var(--muted); white-space: nowrap; }
   .tool-body { padding: 0 28px 24px; }
   .tool-desc { font-size: 14px; line-height: 1.85; color: var(--muted); margin-bottom: 16px; }
-  /* 影片區塊（工具一用）*/
-  .tool-video {
-    width: 100%; position: relative;
-    padding-bottom: 45%; height: 0;
-    border-radius: 4px; overflow: hidden;
-    border: 1px solid var(--border);
-    background: #000; margin-bottom: 16px;
-  }
-  .tool-video iframe {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%; border: none;
-  }
-  /* 程式碼區塊 */
-  .tool-code {
-    background: #2E3A42;
-    border-radius: 4px;
-    padding: 16px 20px;
-    margin-top: 12px;
-    overflow-x: auto;
-  }
-  .tool-code-label {
-    font-size: 11px; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 10px;
-  }
-  .tool-code pre {
-    font-family: 'Courier New', monospace;
-    font-size: 13px; line-height: 1.7;
-    color: #C8D8E0; white-space: pre; margin: 0;
-  }
+  .tool-video { width: 100%; position: relative; padding-bottom: 45%; height: 0; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); background: #000; margin-bottom: 16px; }
+  .tool-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .tool-code { background: #2E3A42; border-radius: 4px; padding: 16px 20px; margin-top: 12px; overflow-x: auto; }
+  .tool-code-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; }
+  .tool-code pre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.7; color: #C8D8E0; white-space: pre; margin: 0; }
   .tool-code .code-comment { color: #7A9A8A; }
-  .tool-code .code-cmd { color: #A9C4D0; }
+  .tool-code .code-keyword { color: #A9C4D0; }
   .tool-code .code-str { color: #C8B89A; }
-  /* 功能標籤列 */
+  .tool-code .code-func { color: #B8D4A8; }
   .tool-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-  .tool-tag-item {
-    font-size: 11px; font-weight: 500;
-    padding: 4px 10px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--slate);
-    background: var(--bg);
-    letter-spacing: 0.03em;
-  }
+  .tool-tag-item { font-size: 11px; font-weight: 500; padding: 4px 10px; border: 1px solid var(--border); border-radius: 2px; color: var(--slate); background: var(--bg); letter-spacing: 0.03em; }
 
   /* SKILLS */
   #skills { background: var(--bg); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-  }
-  .skill-group {
-    background: var(--white); border: 1px solid var(--border);
-    border-radius: 4px; padding: 28px;
-  }
-  .skill-group h4 {
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 16px;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+  .skill-group { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 28px; }
+  .skill-group h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 16px; }
   .skill-list { list-style: none; }
-  .skill-list li {
-    font-size: 14px; color: var(--text);
-    padding: 7px 0; border-bottom: 1px solid var(--soft-gray);
-    display: flex; align-items: center; gap: 8px;
-  }
+  .skill-list li { font-size: 14px; color: var(--text); padding: 7px 0; border-bottom: 1px solid var(--soft-gray); display: flex; align-items: center; gap: 8px; }
   .skill-list li:last-child { border-bottom: none; }
-  .skill-list li::before {
-    content: ''; display: block;
-    width: 4px; height: 4px;
-    border-radius: 50%; background: var(--sage); flex-shrink: 0;
-  }
+  .skill-list li::before { content: ''; display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
 
   /* CONTACT */
   #contact { background: var(--deep); color: var(--white); text-align: center; }
   #contact .section-label { color: var(--sage); }
   #contact h2.section-title { color: var(--white); }
-  #contact p {
-    font-size: 16px; color: rgba(255,255,255,0.65);
-    white-space: nowrap; margin: 0 auto 40px;
-  }
+  #contact p { font-size: 16px; color: rgba(255,255,255,0.65); white-space: nowrap; margin: 0 auto 40px; }
   .contact-links { display: flex; justify-content: center; gap: 16px; }
-  .contact-link {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 24px;
-    border: 1px solid rgba(255,255,255,0.25);
-    color: var(--white); text-decoration: none;
-    font-size: 13px; font-weight: 500;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    border-radius: 2px; transition: background 0.2s, border-color 0.2s;
-  }
+  .contact-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border: 1px solid rgba(255,255,255,0.25); color: var(--white); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s, border-color 0.2s; }
   .contact-link:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
 
   /* FOOTER */
-  footer {
-    background: #3A4A58; color: rgba(255,255,255,0.35);
-    text-align: center; padding: 24px;
-    font-size: 12px; letter-spacing: 0.05em;
-  }
+  footer { background: #3A4A58; color: rgba(255,255,255,0.35); text-align: center; padding: 24px; font-size: 12px; letter-spacing: 0.05em; }
 
   /* ANIMATIONS */
   .fade-in { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s ease forwards; }
@@ -408,76 +170,40 @@
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
   /* SCROLL REVEAL */
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* STAT COUNTERS */
-  .about-stats {
-    display: flex; gap: 24px; flex-wrap: wrap;
-    margin-top: 24px;
-  }
-  .stat-box {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 16px 20px;
-    min-width: 110px;
-    text-align: center;
-  }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px; font-weight: 300;
-    color: var(--deep); line-height: 1;
-  }
-  .stat-unit {
-    font-size: 14px; color: var(--sage);
-    font-weight: 700; margin-left: 2px;
-  }
-  .stat-label {
-    font-size: 11px; color: var(--muted);
-    letter-spacing: 0.06em; margin-top: 4px;
-  }
-
-  /* BACK TO TOP */
+  /* BACK TO TOP — 圓形主視覺色 */
   #back-to-top {
-    position: fixed;
-    bottom: 32px; right: 32px;
-    width: 44px; height: 44px;
-    background: var(--deep);
+    position: fixed; bottom: 32px; right: 32px;
+    width: 48px; height: 48px;
+    background: var(--slate);
     color: var(--white);
-    border: none; border-radius: 2px;
-    font-size: 18px; cursor: pointer;
+    border: none; border-radius: 50%;
+    font-size: 20px; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none;
     transition: opacity 0.3s, background 0.2s, transform 0.2s;
     z-index: 200;
-    box-shadow: 0 4px 16px rgba(74,90,106,0.25);
+    box-shadow: 0 4px 16px rgba(74,90,106,0.3);
   }
   #back-to-top.show { opacity: 1; pointer-events: all; }
-  #back-to-top:hover { background: var(--slate); transform: translateY(-2px); }
+  #back-to-top:hover { background: var(--deep); transform: translateY(-3px); }
 
-  /* RESPONSIVE 更新 */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     section { padding: 60px 6% 48px; }
     .project-item { grid-template-columns: 1fr; }
     #contact p { white-space: normal; }
-    .about-stats { gap: 12px; }
+    .about-stats { gap: 10px; }
     #back-to-top { bottom: 20px; right: 20px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">李珮瑄</div>
   <ul class="nav-links">
@@ -490,24 +216,14 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg-line"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow fade-in">
-      <span>行政文書 · 知識管理 · 流程優化</span>
-    </div>
+    <div class="hero-eyebrow fade-in"><span>行政文書 · 知識管理 · 流程優化</span></div>
     <h1 class="hero-name fade-in">李珮瑄<br>Winnie</h1>
-    <p class="hero-desc fade-in">
-      以系統化思維整合知識資源，透過精準的文件管理與流程優化，
-      協助組織將複雜資訊轉化為可執行的工作架構。
-    </p>
+    <p class="hero-desc fade-in">以系統化思維整合知識資源，透過精準的文件管理與流程優化，協助組織將複雜資訊轉化為可執行的工作架構。</p>
     <div class="hero-tags fade-in">
-      <span class="tag">文件管理</span>
-      <span class="tag">知識整合</span>
-      <span class="tag">專案協調</span>
-      <span class="tag">流程優化</span>
-      <span class="tag">業務支援</span>
+      <span class="tag">文件管理</span><span class="tag">知識整合</span><span class="tag">專案協調</span><span class="tag">流程優化</span><span class="tag">業務支援</span>
     </div>
     <a href="#contact" class="btn-primary fade-in">聯絡我 →</a>
   </div>
@@ -515,7 +231,6 @@
 
 <div class="divider"></div>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-label">About</div>
   <h2 class="section-title">關於我</h2>
@@ -540,230 +255,169 @@
       <p>擁有8年以上行政與業務支援的實務經驗，專長於跨部門協調與知識文件化，能在多工環境下保持高度組織性，確保資訊流暢傳遞。</p>
       <p>在歷任職位中，我致力於建立標準作業程序、維護知識庫系統，並協助部門推動工作流程數位轉型，提升作業流程自動化，於個人績效中提升30%的工作效率。</p>
       <p>我相信好的工作流程是組織效能的基石──不只是把事情做完，而是讓每一個流程都能更聰明地運作。</p>
-        <div class="about-stats">
-          <div class="stat-box">
-            <div><span class="stat-number" data-target="8">0</span><span class="stat-unit">年+</span></div>
-            <div class="stat-label">工作經驗</div>
-          </div>
-          <div class="stat-box">
-            <div><span class="stat-number" data-target="30">0</span><span class="stat-unit">%</span></div>
-            <div class="stat-label">個人年度效率提升</div>
-          </div>
-          <div class="stat-box">
-            <div><span class="stat-number" data-target="8">0</span><span class="stat-unit">家+</span></div>
-            <div class="stat-label">輔導作業數位化</div>
-          </div>
-          <div class="stat-box">
-            <div><span class="stat-number" data-target="4">0</span><span class="stat-unit">項+</span></div>
-            <div class="stat-label">自製工具導入</div>
-          </div>
+
+      <!-- 實戰經歷 Banner -->
+      <div class="exp-banner">
+        <span>實戰經歷</span>
+      </div>
+
+      <!-- 成就數字 -->
+      <div class="about-stats">
+        <div class="stat-box">
+          <div><span class="stat-number" data-target="8">0</span><span class="stat-unit">年+</span></div>
+          <div class="stat-label">工作經驗</div>
         </div>
+        <div class="stat-box">
+          <div><span class="stat-number" data-target="30">0</span><span class="stat-unit">%</span></div>
+          <div class="stat-label">個人年度效率提升</div>
+        </div>
+        <div class="stat-box">
+          <div><span class="stat-number" data-target="8">0</span><span class="stat-unit">家+</span></div>
+          <div class="stat-label">輔導作業數位化</div>
+        </div>
+        <div class="stat-box">
+          <div><span class="stat-number" data-target="15">0</span><span class="stat-unit">人+</span></div>
+          <div class="stat-label">輔導工作流程優化</div>
+        </div>
+        <div class="stat-box">
+          <div><span class="stat-number" data-target="4">0</span><span class="stat-unit">項+</span></div>
+          <div class="stat-label">自製工具導入</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-label">Experience</div>
   <h2 class="section-title">工作經歷</h2>
   <div class="timeline">
-
     <div class="timeline-item">
       <div class="timeline-date">2024/4 — 2026/2</div>
       <div class="timeline-company">一卡通票證股份有限公司</div>
       <div class="timeline-role">票證管理師</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>負責部門知識庫建置與維護，文件數量超過7份</li>
-          <li>輔導逾8家客戶流程數位轉型，減少人工檢核作業</li>
-          <li>流程正規劃，落實法規及公司章程，以保護資訊安全</li>
-          <li>主導發掘內部工作流程的瓶頸點，提出優化方案並推動跨部門實施，以達成提升營運效率、縮短服務時長的目標</li>
-          <li>導入VBA及HTML相關工具累計4項，優化工作流程，年度累積提升工作效率30%</li>
-        </ul>
-      </div>
+      <div class="timeline-desc"><ul>
+        <li>負責部門知識庫建置與維護，文件數量超過7份</li>
+        <li>輔導逾8家客戶流程數位轉型，減少人工檢核作業</li>
+        <li>流程正規劃，落實法規及公司章程，以保護資訊安全</li>
+        <li>主導發掘內部工作流程的瓶頸點，提出優化方案並推動跨部門實施，以達成提升營運效率、縮短服務時長的目標</li>
+        <li>導入VBA及HTML相關工具累計4項，優化工作流程，年度累積提升工作效率30%</li>
+      </ul></div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-date">2022/9 — 2024/3</div>
       <div class="timeline-company">昱山環境技術服務顧問有限公司</div>
       <div class="timeline-role">其他專案管理師</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>執行各縣市政府專案，累計標案金額逾2000萬</li>
-          <li>資訊蒐集與評估，執行完整的投標（備標）流程，確保提案符合政府採購法規要求</li>
-          <li>活動執行，範圍涵蓋發布會、記者會、宣導會及成果展等</li>
-          <li>統籌活動所需的採購議價、講師邀約、場地協調，確保活動高品質與媒體曝光效益</li>
-          <li>專業文件撰寫與行政管理</li>
-        </ul>
-      </div>
+      <div class="timeline-desc"><ul>
+        <li>執行各縣市政府專案，累計標案金額逾2000萬</li>
+        <li>資訊蒐集與評估，執行完整的投標（備標）流程，確保提案符合政府採購法規要求</li>
+        <li>活動執行，範圍涵蓋發布會、記者會、宣導會及成果展等</li>
+        <li>統籌活動所需的採購議價、講師邀約、場地協調，確保活動高品質與媒體曝光效益</li>
+        <li>專業文件撰寫與行政管理</li>
+      </ul></div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-date">2022/2 — 2022/7</div>
       <div class="timeline-company">超現實科技股份有限公司</div>
       <div class="timeline-role">其他專案管理師</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>客戶關係管理與維護</li>
-          <li>整合行銷策略規劃與提案</li>
-          <li>全面專案管理與財務控管</li>
-          <li>協調跨部門資源，確保資訊流暢與共識建立，精確產出決策性會議紀錄</li>
-        </ul>
-      </div>
+      <div class="timeline-desc"><ul>
+        <li>客戶關係管理與維護</li>
+        <li>整合行銷策略規劃與提案</li>
+        <li>全面專案管理與財務控管</li>
+        <li>協調跨部門資源，確保資訊流暢與共識建立，精確產出決策性會議紀錄</li>
+      </ul></div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-date">2021/6 — 2022/1</div>
       <div class="timeline-company">經濟部標準檢驗局</div>
       <div class="timeline-role">約聘人員</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>重大專案品質稽核（五倍券專案）</li>
-          <li>執行科室公文收發與簽辦作業，有效落實公文時效管理</li>
-          <li>統籌年度教育訓練活動，具備獨立規劃、跨單位協調及現場執行能力，順利推動組織人才發展計畫</li>
-        </ul>
-      </div>
+      <div class="timeline-desc"><ul>
+        <li>重大專案品質稽核（五倍券專案）</li>
+        <li>執行科室公文收發與簽辦作業，有效落實公文時效管理</li>
+        <li>統籌年度教育訓練活動，具備獨立規劃、跨單位協調及現場執行能力，順利推動組織人才發展計畫</li>
+      </ul></div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-date">2016/7 — 2021/5</div>
       <div class="timeline-company">經濟部標準檢驗局</div>
       <div class="timeline-role">委外行政文書</div>
-      <div class="timeline-desc">
-        <ul>
-          <li>公文流程管理與稽核</li>
-          <li>行政營運與資源統籌</li>
-          <li>教育訓練規劃與執行</li>
-          <li>數據管理與報表編製</li>
-        </ul>
-      </div>
+      <div class="timeline-desc"><ul>
+        <li>公文流程管理與稽核</li>
+        <li>行政營運與資源統籌</li>
+        <li>教育訓練規劃與執行</li>
+        <li>數據管理與報表編製</li>
+      </ul></div>
     </div>
-
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">Projects</div>
   <h2 class="section-title">專案作品</h2>
   <div class="projects-list">
 
-    <!-- 專案 2：各縣市政府專案執行 -->
     <div class="project-item">
-      <div class="project-preview">
-        <img src="project2.jpg" alt="各縣市政府專案執行">
-      </div>
+      <div class="project-preview"><img src="project2.jpg" alt="各縣市政府專案執行"></div>
       <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">專案管理</span>
-          <span class="project-date">2022/9 — 2024/3</span>
-        </div>
+        <div class="project-meta"><span class="project-tag">專案管理</span><span class="project-date">2022/9 — 2024/3</span></div>
         <h3>各縣市政府專案執行</h3>
         <div class="project-desc">
           <strong>政策推動與政府補助案管理</strong>
-          <ul>
-            <li>執行國家或地方公共政策的推動與宣導，確保專案目標符合政府部門的施政方向與規範。</li>
-            <li>負責補助與資源爭取的相關流程，有效協助專案取得所需財務支持。</li>
-          </ul>
+          <ul><li>執行國家或地方公共政策的推動與宣導，確保專案目標符合政府部門的施政方向與規範。</li><li>負責補助與資源爭取的相關流程，有效協助專案取得所需財務支持。</li></ul>
           <strong>整合傳播與高規格活動策劃</strong>
-          <ul>
-            <li>統籌規劃並執行多種類型、高規格的大型活動，包括國際論壇、記者發布會、成果展覽及宣導說明會。</li>
-            <li>負責新聞稿撰寫、社群媒體（臉書）內容經營及網站貼文上架，以確保政策資訊的精準傳播與高媒體曝光率。</li>
-          </ul>
+          <ul><li>統籌規劃並執行多種類型、高規格的大型活動，包括國際論壇、記者發布會、成果展覽及宣導說明會。</li><li>負責新聞稿撰寫、社群媒體（臉書）內容經營及網站貼文上架，以確保政策資訊的精準傳播與高媒體曝光率。</li></ul>
           <strong>專案執行、時程與成本控管</strong>
-          <ul>
-            <li>負責專案管理與執行，確保所有目標有效推進。</li>
-            <li>掌控專案的時程規劃與成本支出，運用專業知識確保資源分配的最佳化，達成在預算內準時結案。</li>
-          </ul>
+          <ul><li>負責專案管理與執行，確保所有目標有效推進。</li><li>掌控專案的時程規劃與成本支出，運用專業知識確保資源分配的最佳化，達成在預算內準時結案。</li></ul>
         </div>
       </div>
     </div>
 
-    <!-- 專案 3：和泰汽車官網展示 -->
     <div class="project-item">
-      <div class="project-preview">
-        <img src="project3.jpg" alt="和泰汽車官網展示">
-      </div>
+      <div class="project-preview"><img src="project3.jpg" alt="和泰汽車官網展示"></div>
       <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">客戶協調</span>
-          <span class="project-date">2022/2 — 2022/8</span>
-        </div>
+        <div class="project-meta"><span class="project-tag">客戶協調</span><span class="project-date">2022/2 — 2022/8</span></div>
         <h3>和泰汽車官網展示</h3>
         <div class="project-desc">
           <strong>客戶需求轉化與溝通管理</strong>
-          <ul>
-            <li>擔任客戶與內部製作團隊之間的溝通橋樑，主導雙向協商，將客戶對樣式與效果的抽象期望精確轉化為 3D 建模的執行規格。</li>
-            <li>確保專案在製作過程中能持續符合客戶的品牌或視覺要求，達成最終的交付標準。</li>
-          </ul>
+          <ul><li>擔任客戶與內部製作團隊之間的溝通橋樑，主導雙向協商，將客戶對樣式與效果的抽象期望精確轉化為 3D 建模的執行規格。</li><li>確保專案在製作過程中能持續符合客戶的品牌或視覺要求，達成最終的交付標準。</li></ul>
           <strong>專案財務評估與報價</strong>
-          <ul>
-            <li>根據客戶需求、技術難度與時程壓力，獨立進行服務成本結構分析，並精確製作報價單。</li>
-            <li>確保報價合理性與市場競爭力，有效為專案創造並維持利潤空間。</li>
-          </ul>
+          <ul><li>根據客戶需求、技術難度與時程壓力，獨立進行服務成本結構分析，並精確製作報價單。</li><li>確保報價合理性與市場競爭力，有效為專案創造並維持利潤空間。</li></ul>
           <strong>3D 製作流程協作與時程控管</strong>
-          <ul>
-            <li>與美術/建模師團隊深度討論，協助解決 3D 場景、技術可行性與設計細節的衝突。</li>
-            <li>負責專案排程與進度追蹤，確保各階段任務能按時完成，保障專案準時交付。</li>
-          </ul>
+          <ul><li>與美術/建模師團隊深度討論，協助解決 3D 場景、技術可行性與設計細節的衝突。</li><li>負責專案排程與進度追蹤，確保各階段任務能按時完成，保障專案準時交付。</li></ul>
         </div>
       </div>
     </div>
 
-    <!-- 專案 4：教育部青年發展署百工一日一超牆職人 -->
     <div class="project-item">
-      <div class="project-preview">
-        <img src="project4.jpg" alt="超牆職人專案">
-      </div>
+      <div class="project-preview"><img src="project4.jpg" alt="超牆職人專案"></div>
       <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">活動策劃</span>
-          <span class="project-date">2022/2 — 2022/8</span>
-        </div>
+        <div class="project-meta"><span class="project-tag">活動策劃</span><span class="project-date">2022/2 — 2022/8</span></div>
         <h3>教育部青年發展署百工一日一超牆職人</h3>
         <div class="project-desc">
           <strong>整合與 VR 數位內容採集</strong>
-          <ul>
-            <li>主導與指標性企業（如：群創、元晶太陽能）及高知名度各行業職人的合作洽談與關係維護，成功邀約其參與 VR360 數位內容拍攝。</li>
-            <li>統籌拍攝專案的行政與物流支援，確保 VR 數位素材的專業性、多樣性與時程符合政策要求。</li>
-          </ul>
+          <ul><li>主導與指標性企業（如：群創、元晶太陽能）及高知名度各行業職人的合作洽談與關係維護，成功邀約其參與 VR360 數位內容拍攝。</li><li>統籌拍攝專案的行政與物流支援，確保 VR 數位素材的專業性、多樣性與時程符合政策要求。</li></ul>
           <strong>政策宣傳與大型公關活動管理</strong>
-          <ul>
-            <li>執行專案啟動發布會的籌備，涵蓋媒體邀請、場地佈置、流程控管等。</li>
-            <li>規劃職人校園巡迴演講活動的行程、推廣職業知能與政策精神。</li>
-          </ul>
+          <ul><li>執行專案啟動發布會的籌備，涵蓋媒體邀請、場地佈置、流程控管等。</li><li>規劃職人校園巡迴演講活動的行程、推廣職業知能與政策精神。</li></ul>
           <strong>數位產品設計與跨職能協作</strong>
-          <ul>
-            <li>主導設計「職人網頁互動式遊戲」的用戶體驗與功能邏輯，將設計與功能規格精確對接給開發工程師與美術團隊，確保數位產品的創新性與技術可行性。</li>
-          </ul>
+          <ul><li>主導設計「職人網頁互動式遊戲」的用戶體驗與功能邏輯，將設計與功能規格精確對接給開發工程師與美術團隊，確保數位產品的創新性與技術可行性。</li></ul>
         </div>
       </div>
     </div>
 
-    <!-- 專案 5：汽車協會網站維運 -->
     <div class="project-item">
-      <div class="project-preview">
-        <img src="project5.jpg" alt="汽車協會網站維運">
-      </div>
+      <div class="project-preview"><img src="project5.jpg" alt="汽車協會網站維運"></div>
       <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">內容管理</span>
-          <span class="project-date">2022/2 — 2022/8</span>
-        </div>
+        <div class="project-meta"><span class="project-tag">內容管理</span><span class="project-date">2022/2 — 2022/8</span></div>
         <h3>汽車協會網站維運</h3>
         <div class="project-desc">
           <strong>關鍵資訊即時更新與管理</strong>
-          <ul>
-            <li>依據協會政策與產業新聞，定期審核與更新網站內容。</li>
-          </ul>
+          <ul><li>依據協會政策與產業新聞，定期審核與更新網站內容。</li></ul>
           <strong>內外部內容上架支援服務</strong>
-          <ul>
-            <li>擔任內容上架的窗口，協助客戶將提供的文案、圖片與檔案精準地上架至網站，並確保其呈現符合網站規範與視覺標準。</li>
-          </ul>
+          <ul><li>擔任內容上架的窗口，協助客戶將提供的文案、圖片與檔案精準地上架至網站，並確保其呈現符合網站規範與視覺標準。</li></ul>
         </div>
       </div>
     </div>
@@ -773,13 +427,12 @@
 
 <div class="divider"></div>
 
-<!-- TOOLS -->
 <section id="tools">
   <div class="section-label">Tools</div>
   <h2 class="section-title">工具開發</h2>
   <div class="tools-grid">
 
-    <!-- 工具 1：資料批次轉換工具 -->
+    <!-- 工具 1 -->
     <div class="tool-card">
       <div class="tool-header">
         <div class="tool-header-left">
@@ -794,15 +447,12 @@
         </div>
         <p class="tool-desc">為因應業務規模逐年擴大與規則日益複雜，既有以 Excel 進行條件式設定與函數檢核的流程需投入大量人工時間，且易造成錯誤率偏高。透過 AI 協作開發 HTML 互動式資料清理工具，以直覺化的頁面介面取代繁複的 Excel 設定，大幅提升作業效率與資料正確性。</p>
         <div class="tool-tags">
-          <span class="tool-tag-item">HTML / CSS / JS</span>
-          <span class="tool-tag-item">AI 協作開發</span>
-          <span class="tool-tag-item">資料清理自動化</span>
-          <span class="tool-tag-item">錯誤率降低</span>
+          <span class="tool-tag-item">HTML / CSS / JS</span><span class="tool-tag-item">AI 協作開發</span><span class="tool-tag-item">資料清理自動化</span><span class="tool-tag-item">錯誤率降低</span>
         </div>
       </div>
     </div>
 
-    <!-- 工具 2：批次照片改檔名工具 -->
+    <!-- 工具 2 -->
     <div class="tool-card">
       <div class="tool-header">
         <div class="tool-header-left">
@@ -812,32 +462,25 @@
         <span class="tool-date">2024</span>
       </div>
       <div class="tool-body">
-        <p class="tool-desc">處理大量學生證照片時，需將相機流水號命名（如 M11208001.jpg）對應至個人身份證字號重新命名。傳統人工逐一修改費時且易出錯。透過 Excel 函數自動生成對照表，搭配 AI 協作產出 BAT 批次腳本，一鍵完成數百筆照片重新命名，並自動記錄失敗清單供後續核查。</p>
+        <p class="tool-desc">處理大量學生證照片時，需將相機流水號命名對應至個人身份證字號重新命名。透過 Excel 函數自動生成對照表，搭配 AI 協作產出 BAT 批次腳本，一鍵完成數百筆照片重新命名，並自動記錄失敗清單供後續核查。</p>
         <div class="tool-code">
           <div class="tool-code-label">核心邏輯 — 批次改檔名.bat</div>
           <pre><span class="code-comment">@echo off</span>
 <span class="code-comment">:: 逐一檢查舊檔名是否存在，存在則改名，不存在則記錄至失敗清單</span>
 
-<span class="code-cmd">IF EXIST</span> <span class="code-str">"M11208001.jpg"</span> <span class="code-cmd">(ren</span> <span class="code-str">"M11208001.jpg" "A230472357.jpg"</span><span class="code-cmd">)</span>
-  <span class="code-cmd">ELSE (echo</span> 找不到: M11208001.jpg <span class="code-cmd">>></span> 改名失敗清單.txt<span class="code-cmd">)</span>
-
-<span class="code-cmd">IF EXIST</span> <span class="code-str">"M11208002.jpg"</span> <span class="code-cmd">(ren</span> <span class="code-str">"M11208002.jpg" "A230966149.jpg"</span><span class="code-cmd">)</span>
-  <span class="code-cmd">ELSE (echo</span> 找不到: M11208002.jpg <span class="code-cmd">>></span> 改名失敗清單.txt<span class="code-cmd">)</span>
+<span class="code-keyword">IF EXIST</span> <span class="code-str">"M11208001.jpg"</span> <span class="code-keyword">(ren</span> <span class="code-str">"M11208001.jpg" "A230472357.jpg"</span><span class="code-keyword">)</span>
+  <span class="code-keyword">ELSE (echo</span> 找不到: M11208001.jpg <span class="code-keyword">>></span> 改名失敗清單.txt<span class="code-keyword">)</span>
 
 <span class="code-comment">:: ... 依照 Excel 對照表自動生成，可處理數百筆資料</span>
-<span class="code-cmd">pause</span></pre>
+<span class="code-keyword">pause</span></pre>
         </div>
         <div class="tool-tags">
-          <span class="tool-tag-item">Windows BAT</span>
-          <span class="tool-tag-item">Excel 函數</span>
-          <span class="tool-tag-item">AI 協作開發</span>
-          <span class="tool-tag-item">批次自動化</span>
-          <span class="tool-tag-item">錯誤記錄機制</span>
+          <span class="tool-tag-item">Windows BAT</span><span class="tool-tag-item">Excel 函數</span><span class="tool-tag-item">AI 協作開發</span><span class="tool-tag-item">批次自動化</span><span class="tool-tag-item">錯誤記錄機制</span>
         </div>
       </div>
     </div>
 
-    <!-- 工具 3：初次製卡明細表暨退卡明細 -->
+    <!-- 工具 3 -->
     <div class="tool-card">
       <div class="tool-header">
         <div class="tool-header-left">
@@ -848,17 +491,36 @@
       </div>
       <div class="tool-body">
         <p class="tool-desc">學生證製卡與退卡流程涉及多欄位資料整合，傳統手動輸入易導致資料缺漏與格式不一致。透過 AI 協作開發 Excel VBA 工具，操作人員貼入基礎資料後，系統自動帶入函數、驗證欄位完整性、格式化明細輸出，並標記異常項目，有效縮短作業時間並提升資料品質。</p>
+        <div class="tool-code">
+          <div class="tool-code-label">核心邏輯 — VBA 自動化片段</div>
+          <pre><span class="code-comment">' 自動帶入函數並驗證欄位完整性</span>
+<span class="code-keyword">Sub</span> <span class="code-func">AutoFillAndValidate</span>()
+    <span class="code-keyword">Dim</span> ws <span class="code-keyword">As</span> Worksheet
+    <span class="code-keyword">Dim</span> lastRow <span class="code-keyword">As Long</span>
+    ws = ThisWorkbook.Sheets(<span class="code-str">"製卡明細"</span>)
+    lastRow = ws.Cells(ws.Rows.Count, <span class="code-str">"A"</span>).End(xlUp).Row
+
+    <span class="code-keyword">Dim</span> i <span class="code-keyword">As Long</span>
+    <span class="code-keyword">For</span> i = 2 <span class="code-keyword">To</span> lastRow
+        <span class="code-comment">' 檢查必填欄位是否空白，空白則標記紅色警示</span>
+        <span class="code-keyword">If</span> ws.Cells(i, 2).Value = <span class="code-str">""</span> <span class="code-keyword">Then</span>
+            ws.Cells(i, 2).Interior.Color = RGB(255, 200, 200)
+        <span class="code-keyword">Else</span>
+            ws.Cells(i, 2).Interior.ColorIndex = xlNone
+        <span class="code-keyword">End If</span>
+        <span class="code-comment">' 自動帶入日期格式</span>
+        ws.Cells(i, 5).NumberFormat = <span class="code-str">"yyyy/mm/dd"</span>
+    <span class="code-keyword">Next</span> i
+    MsgBox <span class="code-str">"驗證完成，異常欄位已標記"</span>
+<span class="code-keyword">End Sub</span></pre>
+        </div>
         <div class="tool-tags">
-          <span class="tool-tag-item">Excel VBA</span>
-          <span class="tool-tag-item">AI 協作開發</span>
-          <span class="tool-tag-item">資料驗證</span>
-          <span class="tool-tag-item">自動格式化</span>
-          <span class="tool-tag-item">製退卡流程</span>
+          <span class="tool-tag-item">Excel VBA</span><span class="tool-tag-item">AI 協作開發</span><span class="tool-tag-item">資料驗證</span><span class="tool-tag-item">自動格式化</span><span class="tool-tag-item">製退卡流程</span>
         </div>
       </div>
     </div>
 
-    <!-- 工具 4：學生證掛失資料格式工具 -->
+    <!-- 工具 4 -->
     <div class="tool-card">
       <div class="tool-header">
         <div class="tool-header-left">
@@ -868,13 +530,35 @@
         <span class="tool-date">2024</span>
       </div>
       <div class="tool-body">
-        <p class="tool-desc">彙整多所學校提交的掛失資料時，各校格式不一造成後端系統無法統一處理。透過 AI 協作設計 Excel VBA 工具，自動識別並轉換各式輸入格式為統一標準，包含欄位對齊、資料型態轉換、重複值偵測與缺漏提示，確保資料在匯入系統前已達到完整性與一致性要求。</p>
+        <p class="tool-desc">彙整多所學校提交的掛失資料時，各校格式不一造成後端系統無法統一處理。透過 AI 協作設計 Excel VBA 工具，自動識別並轉換各式輸入格式為統一標準，包含欄位對齊、資料型態轉換、重複值偵測與缺漏提示。</p>
+        <div class="tool-code">
+          <div class="tool-code-label">核心邏輯 — VBA 重複值偵測與格式統一</div>
+          <pre><span class="code-comment">' 偵測重複身份證字號並統一格式</span>
+<span class="code-keyword">Sub</span> <span class="code-func">NormalizeAndDedup</span>()
+    <span class="code-keyword">Dim</span> ws <span class="code-keyword">As</span> Worksheet
+    <span class="code-keyword">Dim</span> dict <span class="code-keyword">As</span> Object
+    dict = CreateObject(<span class="code-str">"Scripting.Dictionary"</span>)
+    ws = ThisWorkbook.Sheets(<span class="code-str">"掛失資料"</span>)
+    <span class="code-keyword">Dim</span> lastRow <span class="code-keyword">As Long</span>
+    lastRow = ws.Cells(ws.Rows.Count, <span class="code-str">"A"</span>).End(xlUp).Row
+
+    <span class="code-keyword">Dim</span> i <span class="code-keyword">As Long</span>
+    <span class="code-keyword">For</span> i = 2 <span class="code-keyword">To</span> lastRow
+        <span class="code-keyword">Dim</span> idNo <span class="code-keyword">As String</span>
+        idNo = UCase(Trim(ws.Cells(i, 1).Value))  <span class="code-comment">' 統一轉大寫並去空白</span>
+        ws.Cells(i, 1).Value = idNo
+
+        <span class="code-keyword">If</span> dict.Exists(idNo) <span class="code-keyword">Then</span>
+            ws.Cells(i, 1).Interior.Color = RGB(255, 220, 100) <span class="code-comment">' 重複標黃</span>
+        <span class="code-keyword">Else</span>
+            dict.Add idNo, i
+        <span class="code-keyword">End If</span>
+    <span class="code-keyword">Next</span> i
+    MsgBox <span class="code-str">"格式標準化完成，重複項目已標記"</span>
+<span class="code-keyword">End Sub</span></pre>
+        </div>
         <div class="tool-tags">
-          <span class="tool-tag-item">Excel VBA</span>
-          <span class="tool-tag-item">AI 協作開發</span>
-          <span class="tool-tag-item">格式標準化</span>
-          <span class="tool-tag-item">重複值偵測</span>
-          <span class="tool-tag-item">多校資料整合</span>
+          <span class="tool-tag-item">Excel VBA</span><span class="tool-tag-item">AI 協作開發</span><span class="tool-tag-item">格式標準化</span><span class="tool-tag-item">重複值偵測</span><span class="tool-tag-item">多校資料整合</span>
         </div>
       </div>
     </div>
@@ -884,133 +568,87 @@
 
 <div class="divider"></div>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-label">Skills</div>
   <h2 class="section-title">技能清單</h2>
   <div class="skills-grid">
-
     <div class="skill-group">
       <h4>文件 · 行政</h4>
       <ul class="skill-list">
-        <li>文件撰寫與管理</li>
-        <li>SOP 制定與維護</li>
-        <li>會議記錄與追蹤</li>
-        <li>資料整理與歸檔</li>
-        <li>報表製作</li>
+        <li>文件撰寫與管理</li><li>SOP 制定與維護</li><li>會議記錄與追蹤</li><li>資料整理與歸檔</li><li>報表製作</li>
       </ul>
     </div>
-
     <div class="skill-group">
       <h4>軟體工具</h4>
       <ul class="skill-list">
-        <li>Microsoft Office（Word / Excel / PowerPoint）</li>
-        <li>Google Sheet</li>
-        <li>Outlook / Teams</li>
+        <li>Microsoft Office（Word / Excel / PowerPoint）</li><li>Google Sheet</li><li>Outlook / Teams</li>
       </ul>
     </div>
-
     <div class="skill-group">
       <h4>專業能力</h4>
       <ul class="skill-list">
-        <li>跨部門溝通協調</li>
-        <li>專案時程管理</li>
-        <li>流程分析與優化</li>
-        <li>行政文書支援</li>
-        <li>知識整合與傳遞</li>
+        <li>跨部門溝通協調</li><li>專案時程管理</li><li>流程分析與優化</li><li>行政文書支援</li><li>知識整合與傳遞</li>
       </ul>
     </div>
-
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Contact</div>
   <h2 class="section-title">聯絡我</h2>
   <p>歡迎透過以下方式與我聯繫，無論是工作機會、合作提案或一般詢問，我都很樂意回覆。</p>
   <div class="contact-links">
-    <a href="mailto:winniepel3817@gmail.com" class="contact-link" style="text-transform: none;">✉ winniepel3817@gmail.com</a>
+    <a href="mailto:winniepel3817@gmail.com" class="contact-link" style="text-transform:none;">✉ winniepel3817@gmail.com</a>
   </div>
 </section>
 
-<footer>
-  © 2025 李珮瑄 · All rights reserved
-</footer>
+<footer>© 2025 李珮瑄 · All rights reserved</footer>
 
-<!-- 回到頂部按鈕 -->
 <button id="back-to-top" title="回到頂部">↑</button>
 
 <script>
-  // ── 1. 捲動時區塊淡入（Scroll Reveal）──
-  const revealEls = document.querySelectorAll(
-    'section, .project-item, .tool-card, .timeline-item, .skill-group, .about-card'
-  );
+  // 捲動淡入
+  const revealEls = document.querySelectorAll('section, .project-item, .tool-card, .timeline-item, .skill-group, .about-card');
   revealEls.forEach(el => el.classList.add('reveal'));
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
   }, { threshold: 0.08 });
+  revealEls.forEach(el => revealObs.observe(el));
 
-  revealEls.forEach(el => revealObserver.observe(el));
-
-  // ── 2. 數字計數器動畫 ──
+  // 數字計數器
   function animateCounter(el) {
     const target = parseInt(el.dataset.target);
-    const duration = 1200;
-    const step = target / (duration / 16);
-    let current = 0;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        el.textContent = target;
-        clearInterval(timer);
-      } else {
-        el.textContent = Math.floor(current);
-      }
+    const step = target / 75;
+    let cur = 0;
+    const t = setInterval(() => {
+      cur += step;
+      if (cur >= target) { el.textContent = target; clearInterval(t); }
+      else { el.textContent = Math.floor(cur); }
     }, 16);
   }
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.stat-number').forEach(animateCounter);
-        counterObserver.unobserve(entry.target);
-      }
-    });
+  const cntObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.stat-number').forEach(animateCounter); cntObs.unobserve(e.target); } });
   }, { threshold: 0.3 });
+  document.querySelectorAll('.about-stats').forEach(el => cntObs.observe(el));
 
-  document.querySelectorAll('.about-stats').forEach(el => counterObserver.observe(el));
-
-  // ── 3. 導覽列高亮（目前所在區塊）──
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(a => a.classList.remove('active'));
-        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active');
+  // 導覽列高亮
+  const secs = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  const navObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navAs.forEach(a => a.classList.remove('active'));
+        const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
       }
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
+  secs.forEach(s => navObs.observe(s));
 
-  sections.forEach(s => navObserver.observe(s));
-
-  // ── 4. 回到頂部按鈕 ──
+  // 回到頂部
   const btn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('show', window.scrollY > 400);
-  });
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 400));
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
 </body>
 </html>
