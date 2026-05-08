@@ -258,6 +258,80 @@
   .project-desc ul { padding-left: 16px; margin: 0; list-style: disc; }
   .project-desc ul li { margin-bottom: 4px; }
 
+  /* TOOLS */
+  #tools { background: var(--bg); }
+  .tools-grid { display: flex; flex-direction: column; gap: 24px; }
+  .tool-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--white);
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .tool-card:hover { border-color: var(--slate); transform: translateY(-2px); }
+  .tool-header {
+    padding: 24px 28px 16px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .tool-header-left { display: flex; flex-direction: column; gap: 6px; }
+  .tool-type {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--sage);
+  }
+  .tool-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 600;
+    color: var(--deep); line-height: 1.2;
+  }
+  .tool-date { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .tool-body { padding: 0 28px 24px; }
+  .tool-desc { font-size: 14px; line-height: 1.85; color: var(--muted); margin-bottom: 16px; }
+  /* 影片區塊（工具一用）*/
+  .tool-video {
+    width: 100%; position: relative;
+    padding-bottom: 45%; height: 0;
+    border-radius: 4px; overflow: hidden;
+    border: 1px solid var(--border);
+    background: #000; margin-bottom: 16px;
+  }
+  .tool-video iframe {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; border: none;
+  }
+  /* 程式碼區塊 */
+  .tool-code {
+    background: #2E3A42;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-top: 12px;
+    overflow-x: auto;
+  }
+  .tool-code-label {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 10px;
+  }
+  .tool-code pre {
+    font-family: 'Courier New', monospace;
+    font-size: 13px; line-height: 1.7;
+    color: #C8D8E0; white-space: pre; margin: 0;
+  }
+  .tool-code .code-comment { color: #7A9A8A; }
+  .tool-code .code-cmd { color: #A9C4D0; }
+  .tool-code .code-str { color: #C8B89A; }
+  /* 功能標籤列 */
+  .tool-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .tool-tag-item {
+    font-size: 11px; font-weight: 500;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--slate);
+    background: var(--bg);
+    letter-spacing: 0.03em;
+  }
+
   /* SKILLS */
   #skills { background: var(--bg); }
   .skills-grid {
@@ -342,6 +416,7 @@
     <li><a href="#about">關於我</a></li>
     <li><a href="#experience">工作經歷</a></li>
     <li><a href="#projects">專案作品</a></li>
+    <li><a href="#tools">工具開發</a></li>
     <li><a href="#skills">技能</a></li>
     <li><a href="#contact">聯絡</a></li>
   </ul>
@@ -491,21 +566,6 @@
   <h2 class="section-title">專案作品</h2>
   <div class="projects-list">
 
-    <!-- 專案 1：資料批次轉換工具（YouTube 影片）-->
-    <div class="project-item">
-      <div class="project-preview">
-        <iframe src="https://www.youtube.com/embed/vPgx0FuxZh8" allowfullscreen></iframe>
-      </div>
-      <div class="project-info">
-        <div class="project-meta">
-          <span class="project-tag">導入作業優化工具</span>
-          <span class="project-date">2025/11</span>
-        </div>
-        <h3>資料批次轉換工具</h3>
-        <p>為因應業務規模逐年擴大與規則日益複雜，既有以 Excel 進行條件式設定與函數檢核的流程、傳統人工清理資料需投入大量時間，且易因人工作業造成錯誤率偏高，故此開發並導入 HTML 互動式資料清理工具，以直覺化的頁面介面與操作流程取代繁複的 Excel 設定。</p>
-      </div>
-    </div>
-
     <!-- 專案 2：各縣市政府專案執行 -->
     <div class="project-item">
       <div class="project-preview">
@@ -544,7 +604,7 @@
       </div>
       <div class="project-info">
         <div class="project-meta">
-          <span class="project-tag">專案管理</span>
+          <span class="project-tag">客戶協調</span>
           <span class="project-date">2022/2 — 2022/8</span>
         </div>
         <h3>和泰汽車官網展示</h3>
@@ -575,7 +635,7 @@
       </div>
       <div class="project-info">
         <div class="project-meta">
-          <span class="project-tag">專案管理</span>
+          <span class="project-tag">活動策劃</span>
           <span class="project-date">2022/2 — 2022/8</span>
         </div>
         <h3>教育部青年發展署百工一日一超牆職人</h3>
@@ -605,7 +665,7 @@
       </div>
       <div class="project-info">
         <div class="project-meta">
-          <span class="project-tag">專案管理</span>
+          <span class="project-tag">內容管理</span>
           <span class="project-date">2022/2 — 2022/8</span>
         </div>
         <h3>汽車協會網站維運</h3>
@@ -618,6 +678,117 @@
           <ul>
             <li>擔任內容上架的窗口，協助客戶將提供的文案、圖片與檔案精準地上架至網站，並確保其呈現符合網站規範與視覺標準。</li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-label">Tools</div>
+  <h2 class="section-title">工具開發</h2>
+  <div class="tools-grid">
+
+    <!-- 工具 1：資料批次轉換工具 -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-header-left">
+          <span class="tool-type">HTML · AI 協作開發</span>
+          <h3>資料批次轉換工具</h3>
+        </div>
+        <span class="tool-date">2025/11</span>
+      </div>
+      <div class="tool-body">
+        <div class="tool-video">
+          <iframe src="https://www.youtube.com/embed/vPgx0FuxZh8" allowfullscreen></iframe>
+        </div>
+        <p class="tool-desc">為因應業務規模逐年擴大與規則日益複雜，既有以 Excel 進行條件式設定與函數檢核的流程需投入大量人工時間，且易造成錯誤率偏高。透過 AI 協作開發 HTML 互動式資料清理工具，以直覺化的頁面介面取代繁複的 Excel 設定，大幅提升作業效率與資料正確性。</p>
+        <div class="tool-tags">
+          <span class="tool-tag-item">HTML / CSS / JS</span>
+          <span class="tool-tag-item">AI 協作開發</span>
+          <span class="tool-tag-item">資料清理自動化</span>
+          <span class="tool-tag-item">錯誤率降低</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 工具 2：批次照片改檔名工具 -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-header-left">
+          <span class="tool-type">BAT · Excel VBA · AI 協作開發</span>
+          <h3>批次照片改檔名工具</h3>
+        </div>
+        <span class="tool-date">2024</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">處理大量學生證照片時，需將相機流水號命名（如 M11208001.jpg）對應至個人身份證字號重新命名。傳統人工逐一修改費時且易出錯。透過 Excel 函數自動生成對照表，搭配 AI 協作產出 BAT 批次腳本，一鍵完成數百筆照片重新命名，並自動記錄失敗清單供後續核查。</p>
+        <div class="tool-code">
+          <div class="tool-code-label">核心邏輯 — 批次改檔名.bat</div>
+          <pre><span class="code-comment">@echo off</span>
+<span class="code-comment">:: 逐一檢查舊檔名是否存在，存在則改名，不存在則記錄至失敗清單</span>
+
+<span class="code-cmd">IF EXIST</span> <span class="code-str">"M11208001.jpg"</span> <span class="code-cmd">(ren</span> <span class="code-str">"M11208001.jpg" "A230472357.jpg"</span><span class="code-cmd">)</span>
+  <span class="code-cmd">ELSE (echo</span> 找不到: M11208001.jpg <span class="code-cmd">>></span> 改名失敗清單.txt<span class="code-cmd">)</span>
+
+<span class="code-cmd">IF EXIST</span> <span class="code-str">"M11208002.jpg"</span> <span class="code-cmd">(ren</span> <span class="code-str">"M11208002.jpg" "A230966149.jpg"</span><span class="code-cmd">)</span>
+  <span class="code-cmd">ELSE (echo</span> 找不到: M11208002.jpg <span class="code-cmd">>></span> 改名失敗清單.txt<span class="code-cmd">)</span>
+
+<span class="code-comment">:: ... 依照 Excel 對照表自動生成，可處理數百筆資料</span>
+<span class="code-cmd">pause</span></pre>
+        </div>
+        <div class="tool-tags">
+          <span class="tool-tag-item">Windows BAT</span>
+          <span class="tool-tag-item">Excel 函數</span>
+          <span class="tool-tag-item">AI 協作開發</span>
+          <span class="tool-tag-item">批次自動化</span>
+          <span class="tool-tag-item">錯誤記錄機制</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 工具 3：初次製卡明細表暨退卡明細 -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-header-left">
+          <span class="tool-type">Excel VBA · AI 協作開發</span>
+          <h3>製卡暨退卡明細自動化表單</h3>
+        </div>
+        <span class="tool-date">2024</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">學生證製卡與退卡流程涉及多欄位資料整合，傳統手動輸入易導致資料缺漏與格式不一致。透過 AI 協作開發 Excel VBA 工具，操作人員貼入基礎資料後，系統自動帶入函數、驗證欄位完整性、格式化明細輸出，並標記異常項目，有效縮短作業時間並提升資料品質。</p>
+        <div class="tool-tags">
+          <span class="tool-tag-item">Excel VBA</span>
+          <span class="tool-tag-item">AI 協作開發</span>
+          <span class="tool-tag-item">資料驗證</span>
+          <span class="tool-tag-item">自動格式化</span>
+          <span class="tool-tag-item">製退卡流程</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 工具 4：學生證掛失資料格式工具 -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-header-left">
+          <span class="tool-type">Excel VBA · AI 協作開發</span>
+          <h3>各校學生證掛失資料標準化工具</h3>
+        </div>
+        <span class="tool-date">2024</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">彙整多所學校提交的掛失資料時，各校格式不一造成後端系統無法統一處理。透過 AI 協作設計 Excel VBA 工具，自動識別並轉換各式輸入格式為統一標準，包含欄位對齊、資料型態轉換、重複值偵測與缺漏提示，確保資料在匯入系統前已達到完整性與一致性要求。</p>
+        <div class="tool-tags">
+          <span class="tool-tag-item">Excel VBA</span>
+          <span class="tool-tag-item">AI 協作開發</span>
+          <span class="tool-tag-item">格式標準化</span>
+          <span class="tool-tag-item">重複值偵測</span>
+          <span class="tool-tag-item">多校資料整合</span>
         </div>
       </div>
     </div>
