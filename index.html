@@ -56,8 +56,18 @@
   }
   .nav-links a:hover { color: var(--deep); }
 
-  /* SECTIONS */
-  section { padding: 100px 5% 80px; }
+  /* NAV ACTIVE */
+  .nav-links a.active { color: var(--deep); }
+  .nav-links a.active::after {
+    content: ''; display: block;
+    width: 100%; height: 2px;
+    background: var(--sage);
+    margin-top: 2px;
+    border-radius: 1px;
+  }
+
+  /* SECTIONS - 縮短間距 */
+  section { padding: 72px 5% 60px; }
   .section-label {
     font-size: 13px; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase;
@@ -397,13 +407,71 @@
   .fade-in:nth-child(5) { animation-delay: 0.7s; }
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
-  /* RESPONSIVE */
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* STAT COUNTERS */
+  .about-stats {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .stat-box {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px 20px;
+    min-width: 110px;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300;
+    color: var(--deep); line-height: 1;
+  }
+  .stat-unit {
+    font-size: 14px; color: var(--sage);
+    font-weight: 700; margin-left: 2px;
+  }
+  .stat-label {
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.06em; margin-top: 4px;
+  }
+
+  /* BACK TO TOP */
+  #back-to-top {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    width: 44px; height: 44px;
+    background: var(--deep);
+    color: var(--white);
+    border: none; border-radius: 2px;
+    font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s, background 0.2s, transform 0.2s;
+    z-index: 200;
+    box-shadow: 0 4px 16px rgba(74,90,106,0.25);
+  }
+  #back-to-top.show { opacity: 1; pointer-events: all; }
+  #back-to-top:hover { background: var(--slate); transform: translateY(-2px); }
+
+  /* RESPONSIVE 更新 */
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    section { padding: 80px 6% 60px; }
+    section { padding: 60px 6% 48px; }
     .project-item { grid-template-columns: 1fr; }
     #contact p { white-space: normal; }
+    .about-stats { gap: 12px; }
+    #back-to-top { bottom: 20px; right: 20px; }
   }
 </style>
 </head>
@@ -472,6 +540,24 @@
       <p>擁有8年以上行政與業務支援的實務經驗，專長於跨部門協調與知識文件化，能在多工環境下保持高度組織性，確保資訊流暢傳遞。</p>
       <p>在歷任職位中，我致力於建立標準作業程序、維護知識庫系統，並協助部門推動工作流程數位轉型，提升作業流程自動化，於個人績效中提升30%的工作效率。</p>
       <p>我相信好的工作流程是組織效能的基石──不只是把事情做完，而是讓每一個流程都能更聰明地運作。</p>
+        <div class="about-stats">
+          <div class="stat-box">
+            <div><span class="stat-number" data-target="8">0</span><span class="stat-unit">年+</span></div>
+            <div class="stat-label">工作經驗</div>
+          </div>
+          <div class="stat-box">
+            <div><span class="stat-number" data-target="30">0</span><span class="stat-unit">%</span></div>
+            <div class="stat-label">效率提升</div>
+          </div>
+          <div class="stat-box">
+            <div><span class="stat-number" data-target="8">0</span><span class="stat-unit">家+</span></div>
+            <div class="stat-label">數位轉型客戶</div>
+          </div>
+          <div class="stat-box">
+            <div><span class="stat-number" data-target="4">0</span><span class="stat-unit">項</span></div>
+            <div class="stat-label">自製工具導入</div>
+          </div>
+        </div>
     </div>
   </div>
 </section>
@@ -631,7 +717,7 @@
     <!-- 專案 4：教育部青年發展署百工一日一超牆職人 -->
     <div class="project-item">
       <div class="project-preview">
-        <img src="project4.jpg" alt="超牆職人專案">
+        <img src="project4.png" alt="超牆職人專案">
       </div>
       <div class="project-info">
         <div class="project-meta">
@@ -661,7 +747,7 @@
     <!-- 專案 5：汽車協會網站維運 -->
     <div class="project-item">
       <div class="project-preview">
-        <img src="project5.jpg" alt="汽車協會網站維運">
+        <img src="project5.png" alt="汽車協會網站維運">
       </div>
       <div class="project-info">
         <div class="project-meta">
@@ -852,5 +938,79 @@
   © 2025 李珮瑄 · All rights reserved
 </footer>
 
+<!-- 回到頂部按鈕 -->
+<button id="back-to-top" title="回到頂部">↑</button>
+
+<script>
+  // ── 1. 捲動時區塊淡入（Scroll Reveal）──
+  const revealEls = document.querySelectorAll(
+    'section, .project-item, .tool-card, .timeline-item, .skill-group, .about-card'
+  );
+  revealEls.forEach(el => el.classList.add('reveal'));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ── 2. 數字計數器動畫 ──
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1200;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        el.textContent = target;
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(current);
+      }
+    }, 16);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.stat-number').forEach(animateCounter);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.about-stats').forEach(el => counterObserver.observe(el));
+
+  // ── 3. 導覽列高亮（目前所在區塊）──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => navObserver.observe(s));
+
+  // ── 4. 回到頂部按鈕 ──
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('show', window.scrollY > 400);
+  });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
