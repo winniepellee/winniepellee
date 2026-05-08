@@ -174,19 +174,37 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* BACK TO TOP — 圓形主視覺色 */
-  #back-to-top {
-    position: fixed; bottom: 32px; right: 32px;
-    width: 48px; height: 48px;
-    background: var(--slate);
-    color: var(--white);
-    border: none; border-radius: 50%;
-    font-size: 20px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.3s, background 0.2s, transform 0.2s;
-    z-index: 200;
-    box-shadow: 0 4px 16px rgba(74,90,106,0.3);
-  }
+ #back-to-top {
+  position: fixed; bottom: 32px; right: 32px;
+  width: 52px; height: 52px;
+  background: var(--slate);
+  color: var(--white);
+  border: none; border-radius: 50%;
+  cursor: pointer;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s, background 0.2s, transform 0.2s;
+  z-index: 200;
+  box-shadow: 0 4px 16px rgba(74,90,106,0.3);
+}
+#back-to-top.show { opacity: 1; pointer-events: all; }
+#back-to-top:hover { background: var(--deep); transform: translateY(-3px); }
+
+/* 上方橫線 */
+.btt-line {
+  display: block;
+  width: 18px; height: 2.5px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+/* 箭頭 */
+.btt-arrow {
+  font-size: 18px;
+  line-height: 1;
+  margin-top: -1px;
+}
   #back-to-top.show { opacity: 1; pointer-events: all; }
   #back-to-top:hover { background: var(--deep); transform: translateY(-3px); }
 
@@ -379,7 +397,7 @@
     <div class="project-item">
       <div class="project-preview"><img src="project3.jpg" alt="和泰汽車官網展示"></div>
       <div class="project-info">
-        <div class="project-meta"><span class="project-tag">客戶協調</span><span class="project-date">2022/2 — 2022/8</span></div>
+        <div class="project-meta"><span class="project-tag">專案管理</span><span class="project-date">2022/2 — 2022/8</span></div>
         <h3>和泰汽車官網展示</h3>
         <div class="project-desc">
           <strong>客戶需求轉化與溝通管理</strong>
@@ -395,7 +413,7 @@
     <div class="project-item">
       <div class="project-preview"><img src="project4.jpg" alt="超牆職人專案"></div>
       <div class="project-info">
-        <div class="project-meta"><span class="project-tag">活動策劃</span><span class="project-date">2022/2 — 2022/8</span></div>
+        <div class="project-meta"><span class="project-tag">專案管理</span><span class="project-date">2022/2 — 2022/8</span></div>
         <h3>教育部青年發展署百工一日一超牆職人</h3>
         <div class="project-desc">
           <strong>整合與 VR 數位內容採集</strong>
@@ -411,7 +429,7 @@
     <div class="project-item">
       <div class="project-preview"><img src="project5.jpg" alt="汽車協會網站維運"></div>
       <div class="project-info">
-        <div class="project-meta"><span class="project-tag">內容管理</span><span class="project-date">2022/2 — 2022/8</span></div>
+        <div class="project-meta"><span class="project-tag">專案管理</span><span class="project-date">2022/2 — 2022/8</span></div>
         <h3>汽車協會網站維運</h3>
         <div class="project-desc">
           <strong>關鍵資訊即時更新與管理</strong>
@@ -462,7 +480,7 @@
         <span class="tool-date">2024</span>
       </div>
       <div class="tool-body">
-        <p class="tool-desc">處理大量學生證照片時，需將相機流水號命名對應至個人身份證字號重新命名。透過 Excel 函數自動生成對照表，搭配 AI 協作產出 BAT 批次腳本，一鍵完成數百筆照片重新命名，並自動記錄失敗清單供後續核查。</p>
+        <p class="tool-desc">處理大量學生證照片時，因客戶所提供的照片命名格式皆不相同，為解決照片命名問題，搭配 AI 協作產出 BAT 批次腳本，一鍵完成數百筆照片重新命名，並自動記錄失敗清單供後續核查。</p>
         <div class="tool-code">
           <div class="tool-code-label">核心邏輯 — 批次改檔名.bat</div>
           <pre><span class="code-comment">@echo off</span>
@@ -485,12 +503,12 @@
       <div class="tool-header">
         <div class="tool-header-left">
           <span class="tool-type">Excel VBA · AI 協作開發</span>
-          <h3>製卡暨退卡明細自動化表單</h3>
+          <h3>自動化明細表單</h3>
         </div>
         <span class="tool-date">2024</span>
       </div>
       <div class="tool-body">
-        <p class="tool-desc">學生證製卡與退卡流程涉及多欄位資料整合，傳統手動輸入易導致資料缺漏與格式不一致。透過 AI 協作開發 Excel VBA 工具，操作人員貼入基礎資料後，系統自動帶入函數、驗證欄位完整性、格式化明細輸出，並標記異常項目，有效縮短作業時間並提升資料品質。</p>
+        <p class="tool-desc">為解決人工重複作業流程，透過 AI 協作開發 Excel VBA 工具，操作人員貼入基礎資料後，系統自動帶入函數、驗證欄位完整性、格式化明細輸出，並標記異常項目，有效縮短作業時間並提升資料品質。</p>
         <div class="tool-code">
           <div class="tool-code-label">核心邏輯 — VBA 自動化片段</div>
           <pre><span class="code-comment">' 自動帶入函數並驗證欄位完整性</span>
@@ -525,12 +543,12 @@
       <div class="tool-header">
         <div class="tool-header-left">
           <span class="tool-type">Excel VBA · AI 協作開發</span>
-          <h3>各校學生證掛失資料標準化工具</h3>
+          <h3>即時回饋表單</h3>
         </div>
         <span class="tool-date">2024</span>
       </div>
       <div class="tool-body">
-        <p class="tool-desc">彙整多所學校提交的掛失資料時，各校格式不一造成後端系統無法統一處理。透過 AI 協作設計 Excel VBA 工具，自動識別並轉換各式輸入格式為統一標準，包含欄位對齊、資料型態轉換、重複值偵測與缺漏提示。</p>
+        <p class="tool-desc">因客戶所提供之格式不一致，造成後端系統無法統一處理。透過撰寫VBA設定欄位規則，統一資料格式，再提供予用戶並輔導使用，讓用戶可以即時發現錯誤後並修正，大幅降低人工檢核時間、提升資料完整性。</p>
         <div class="tool-code">
           <div class="tool-code-label">核心邏輯 — VBA 重複值偵測與格式統一</div>
           <pre><span class="code-comment">' 偵測重複身份證字號並統一格式</span>
@@ -604,7 +622,10 @@
 
 <footer>© 2025 李珮瑄 · All rights reserved</footer>
 
-<button id="back-to-top" title="回到頂部">↑</button>
+<button id="back-to-top" title="回到頂部">
+  <span class="btt-line"></span>
+  <span class="btt-arrow">↑</span>
+</button>
 
 <script>
   // 捲動淡入
